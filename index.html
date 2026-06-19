@@ -472,22 +472,26 @@ section {
   animation: rotateSlow 10s linear infinite reverse;
 }
 .avatar-inner {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #0a1628, #0d2040);
-  border: 2px solid var(--glass-border);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: 'Orbitron', monospace;
-  font-size: 4rem;
-  font-weight: 900;
-  color: var(--neon-blue);
-  text-shadow: var(--glow-lg);
-  overflow: hidden;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #0a1628, #0d2040);
+    border: 2px solid var(--glass-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
 }
 
+  .profile-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+    display: block;
+}
+  
 .about-stats {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1102,13 +1106,19 @@ footer {
       <div class="section-divider"></div>
     </div>
 
-    <div class="about-grid">
-      <div class="about-visual reveal">
-        <div class="avatar-container">
-          <div class="avatar-ring"></div>
-          <div class="avatar-ring2"></div>
-          <div class="avatar-inner">PK</div>
+    <div class="about-visual reveal">
+    <div class="avatar-container">
+        <div class="avatar-ring"></div>
+        <div class="avatar-ring2"></div>
+
+        <div class="avatar-inner">
+            <img src="images/profile.jpg"
+                 alt="Nani Profile"
+                 class="profile-photo">
         </div>
+    </div>
+
+</div>
 
         <div class="about-stats">
           <div class="stat-item glass-card">
