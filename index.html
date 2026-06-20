@@ -69,15 +69,36 @@ nav {
 }
 nav.scrolled { box-shadow: 0 4px 30px rgba(0,212,255,0.1); }
 
-.nav-logo {
-  font-family: 'Orbitron', monospace;
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: var(--neon-blue);
-  text-shadow: var(--glow-sm);
-  text-decoration: none;
-  letter-spacing: 2px;
+..nav-logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
 }
+
+  .nav-profile {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--neon-blue);
+    box-shadow:
+        0 0 8px rgba(0, 212, 255, 0.6),
+        0 0 20px rgba(0, 212, 255, 0.3);
+    transition: all 0.3s ease;
+}
+  .nav-profile:hover {
+    transform: scale(1.08);
+    box-shadow:
+        0 0 12px rgba(0, 212, 255, 0.8),
+        0 0 30px rgba(0, 212, 255, 0.5);
+}
+@media (max-width: 768px) {
+    .nav-profile {
+        width: 42px;
+        height: 42px;
+    }
+}
+
 .nav-logo span { color: var(--text-primary); }
 
 .nav-links {
@@ -1040,7 +1061,9 @@ footer {
 
 <!-- NAVBAR -->
 <nav id="navbar">
-  <a href="#hero" class="nav-logo">PKR<span>.</span></a>
+ <a href="#hero" class="nav-logo">
+    <img src="images/profile.jpg" alt="Nani Profile" class="nav-profile">
+</a>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#skills">Skills</a></li>
